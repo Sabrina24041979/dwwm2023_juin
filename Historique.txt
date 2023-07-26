@@ -1,0 +1,114 @@
+    1  hostname
+    2  whoami
+    3  pwd
+    4  cd ..
+    5  ls
+    6  cd -
+    7  cd ~/desktop/
+    8  #Créer un dossier
+    9  #make directory
+   10  mkdir Toto
+   11  #Affichier  le dossier pour vérifier si le dossier a été créé
+   12  ls
+   13  #détails de chaques fichiers et dossier
+   14  ls -l
+   15  #afficher les fichiers et dossiers cachées => .BIBU;TXT
+   16  ls -la
+   17  #Aller dans le dossier Toto
+   18  cd Toto/
+   19  #créer un nouveau dossier
+   20  #créer un nouveau fichier
+   21  touch Bibu.txt
+   22  #vérifier si existe
+   23  ls
+   24  #créer un deuxième fichier
+   25  touch biba.txt
+   26  #vérif si dossier existant
+   27  ls
+   28  #créer un nouveau dossier dans Toto
+   29  mkdir Data
+   30  #on va dans le dossier data
+   31  cd Data/
+   32  #créer un nouveau fichier dans Data
+   33  touch merci.txt
+   34  #Remonter au parent de Data
+   35  cd ..
+   36  #dossier actuel uniquement un point
+   37  ls -la
+   38  #point => dossier ou je me trouve
+   39  # dépot local => uniquement dans mon ordi => initialiser Toto omme un dépôt
+   40  git init
+   41  # le faire qu'une seule fois
+   42  # initialisation du dossier sur git
+   43  #initialiser un dossier en depôt git
+   44  #(master = nom de branche qui n'existe plus => maintenant c(est main
+   45  #On peut renommer le nom de la branche
+   46  #sur du local pas besoin de faire du git pull et gitpush
+   47  #on va modifier le fichier Biba.txt
+   48  #ecrire dans un fichier sans l'ouvrir
+   49  # echo permet d'affichier un message
+   50  echo "Bonjour" >Biba.txt
+   51  #> permet d'envoyer un message dans le fichier. Attention ne pas oublier l'espace entre le texte et >
+   52  #annoncer les modifications à git
+   53  # git add . => annoncer la modification dans le dossier ou je me trouve
+   54  git add .
+   55  # git add * => annonce la modification du fichier dans tous les dossiers
+   56  #connaitre le status
+   57  git status
+   58  # ajouter un message dans le commit
+   59  git commit -m "Mon premier commit"
+   60  #vérifier s'il y a du contenu dans un fichier sans l'ouvrir
+   61  cat Biba.txt
+   62  #ajouter des lignes dans le texte
+   63  # si on écrit echo "Au revoir" > Biba.txt => on écrase l'existant on utilise le double >>
+   64  echo "Au revoir" >> Biba.txt
+   65  echo "Au revoir" >> Biba.txt
+   66  car Biba.txt
+   67  cat Biba.txt
+   68  git commit -m "Deuxième commit"
+   69  git add .
+   70  git commit -m "Deuxième commit"
+   71  #Ajouter une nouvelle ligne dans le fichier dans Bibu.txt
+   72  echo "Hello" > Bibu.txt
+   73  #bug => pour interrompre une action controle + c
+   74  git add .
+   75  git commit -m "Troisième commit"
+   76  # créer une nouvelle branche
+   77  git  branch Test
+   78  #branche qui a été créé en copiant la branche master
+   79  #se placer dans la branche crééer Test
+   80  git checkout Test
+   81  git add .
+   82  git commit -m "Added branch test"
+   83  #Dans la brache Test nous allons supprimer des fichiers et dossiers
+   84  #On veut le supprimer dans git c'est toujours git rm
+   85  git rm Biba.txt
+   86  git rm Biba.txt
+   87  git rm Biba.txt
+   88  ls
+   89  git rm biba.txt
+   90  # supprimer un dossier
+   91  git rm -rf Data/
+   92  git add *
+   93  git commit -m "Suppression de fichiers"
+   94  ls
+   95  git checkout master
+   96  ls
+   97  #les dossiers sont concervés dans "master"
+   98  #créer sans rentrer dans le dossier à partir du dossier ou je me trouve
+   99  touch ./Data/{oh,ah}.txt
+  100  ls ./Data/
+  101  git add *
+  102  git commit -m "Ajout de fichiers"
+  103  git checkout Test
+  104  git branch Re7
+  105  git checkout Re7
+  106  git add *
+  107  git commit -m "Ajout branche R7"
+  108  #création nouveau dossier
+  109  git touch Historique.txt
+  110  touch Historique.txt
+  111  #pour trouver l'historique dans Linux
+  112  history
+  113  #Placer le contenu, une sortie qu'on va mettre dans un fichier
+  114  history > Historique.txt
